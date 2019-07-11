@@ -1116,21 +1116,6 @@ def make_entropy_map(clstr: cluster.ClusterObj):
 
     fits.writeto(clstr.entropy_map_filename, norm_K, header=clstr.temperature_map_header, overwrite=True)
 
-def make_entropy_map(clstr: cluster.ClusterObj):
-
-    from astropy.io import fits
-    n = make_density_map(clstr)
-    T = clstr.temperature_map
-    header = clstr.temperature_map_header
-
-    n, T = do.make_sizes_match(n, T)
-
-    K = T*(n**(-2./3.))
-
-    norm_K = do.normalize_data(K)
-
-    fits.writeto(clstr.entropy_map_filename, norm_K, header=header, overwrite=True)    
-    
 
 if __name__ == '__main__':
     args, parser = get_arguments()
