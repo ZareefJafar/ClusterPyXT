@@ -69,7 +69,7 @@ Now you need to create a region file enclosing the region you would like to crop
 the final analysis to. To do so, open the surface brightness file (`../[pipeline_data_dir]/[cluster_name]/main_output/[cluster_name]_xray_surface_brightness_nosrc.fits`)
 and create a box region containing all parts of the image you want included in the analysis. 
 
-Save this file as: `../[pipeline_data_dir]/[cluster_name]/[observation_id]/analysis/acisI_region_0.reg`
+Save this file as: `../[pipeline_data_dir]/[cluster_name]/combined/master_crop-ciaowcs.reg`
 
 After this region file is created, continue running ClusterPyXT by running `python clusterpyxt.py --continue` or through the CLI GUI.
 
